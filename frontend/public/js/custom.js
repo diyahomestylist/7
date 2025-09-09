@@ -42,19 +42,19 @@ $(function () {
 		});
 	});
 	
-	/* NiceScroll
+	/* NiceScroll - Disabled for React compatibility
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	
-	$(".brand-box").niceScroll({
-		cursorcolor:"#9b9b9c",
-	});	
+	// $(".brand-box").niceScroll({
+	//     cursorcolor:"#9b9b9c",
+	// });	
 	
-	/* NiceSelect
+	/* NiceSelect - Disabled for React compatibility 
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	
-	$(document).ready(function() {
-		$('select').niceSelect();
-	});	
+	// $(document).ready(function() {
+	//     $('select').niceSelect();
+	// });	
 		
 	/* OwlCarousel - Blog Post slider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
