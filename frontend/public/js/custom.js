@@ -1,123 +1,42 @@
 /*---------------------------------------------------------------------
-    File Name: custom.js
+    File Name: custom.js - Simplified for React compatibility
 ---------------------------------------------------------------------*/
 
-$(function () {
-	
-	"use strict";
-	
-	/* Simple functionality for the Jus Momo website */
-	
-	$(document).ready(function () {
-		// Initialize tooltips if Bootstrap is available
-		if ($.fn.tooltip) {
-			$('[data-toggle="tooltip"]').tooltip();
-		}
-		
-		// Handle navbar toggle
-		$('.navbar-toggler').on('click', function() {
-			$('.navbar-collapse').toggleClass('show');
-		});
-		
-		// Handle carousel controls if available
-		$('.carousel-control-prev').on('click', function(e) {
-			e.preventDefault();
-			// Custom carousel logic handled by React
-		});
-		
-		$('.carousel-control-next').on('click', function(e) {
-			e.preventDefault();
-			// Custom carousel logic handled by React
-		});
-		
-		// Smooth scrolling for anchor links
-		$('a[href^="#"]').on('click', function(event) {
-			var target = $(this.getAttribute('href'));
-			if( target.length ) {
-				event.preventDefault();
-				$('html, body').stop().animate({
-					scrollTop: target.offset().top
-				}, 1000);
-			}
-		});
-	});
-	
-	/* NiceScroll - Disabled for React compatibility
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	// $(".brand-box").niceScroll({
-	//     cursorcolor:"#9b9b9c",
-	// });	
-	
-	/* NiceSelect - Disabled for React compatibility 
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	// $(document).ready(function() {
-	//     $('select').niceSelect();
-	// });	
-		
-	/* OwlCarousel - Disabled for React compatibility
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	// $(document).ready(function() {
-	//   var owl = $('.carousel-slider-post');
-	//   owl.owlCarousel({
-	//         items: 1,
-	//         loop: true,
-	//         margin: 10,
-	//         autoplay: true,
-	//         autoplayTimeout: 3000,
-	//         autoplayHoverPause: true
-	//   });     
-	// });
-	
-	/* OwlCarousel - Banner Rotator Slider - Disabled for React compatibility
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	// $(document).ready(function() {
-	//   var owl = $('.banner-rotator-slider');
-	//   owl.owlCarousel({
-	//         items: 1,
-	//         loop: true,
-	//         margin: 10,
-	//         nav: true,
-	//         dots: false,
-	//         navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-	//         autoplay: true,
-	//         autoplayTimeout: 3000,
-	//         autoplayHoverPause: true
-	//   });     
-	// });
-	
-	/* OwlCarousel - Product Slider
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	$(document).ready(function() {
-	  var owl = $('#product-in-slider');
-	  owl.owlCarousel({
-		loop: true,
-		nav: true,
-		margin: 10,
-		navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-		responsive: {
-		  0: {
-			items: 1
-		  },
-		  600: {
-			items: 2
-		  },
-		  960: {
-			items: 3
-		  },
-		  1200: {
-			items: 4
-		  }
-		}
-	  });
-	  owl.on('mousewheel', '.owl-stage', function(e) {
-		if (e.deltaY > 0) {
-		  owl.trigger('next.owl');
-		} else {
+$(document).ready(function () {
+        
+        "use strict";
+        
+        // Initialize tooltips if Bootstrap is available
+        if ($.fn.tooltip) {
+                $('[data-toggle="tooltip"]').tooltip();
+        }
+        
+        // Handle navbar toggle
+        $('.navbar-toggler').on('click', function() {
+                $('.navbar-collapse').toggleClass('show');
+        });
+        
+        // Smooth scrolling for anchor links
+        $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                        event.preventDefault();
+                        $('html, body').stop().animate({
+                                scrollTop: target.offset().top
+                        }, 1000);
+                }
+        });
+        
+        // Simple carousel functionality (React handles the actual carousel)
+        $('.carousel-control-prev').on('click', function(e) {
+                e.preventDefault();
+        });
+        
+        $('.carousel-control-next').on('click', function(e) {
+                e.preventDefault();
+        });
+        
+});
 		  owl.trigger('prev.owl');
 		}
 		e.preventDefault();
