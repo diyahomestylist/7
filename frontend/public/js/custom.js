@@ -6,45 +6,39 @@ $(function () {
 	
 	"use strict";
 	
-	/* Preloader
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+	/* Simple functionality for the Jus Momo website */
 	
-	setTimeout(function () {
-		$('.loader_bg').fadeToggle();
-	}, 1500);
-	
-	/* JQuery Menu
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
 	$(document).ready(function () {
-		$('header nav').meanmenu();
-	});
-	
-	/* Tooltip
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	$(document).ready(function(){
-		$('[data-toggle="tooltip"]').tooltip();
-	});
-	
-	/* sticky
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	$(document).ready(function(){
-		$(".sticky-wrapper-header").sticky({topSpacing:0});
-	});
-	
-	/* Mouseover
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	$(document).ready(function(){
-		$(".main-menu ul li.megamenu").mouseover(function(){
-			if (!$(this).parent().hasClass("#wrapper")){
-			$("#wrapper").addClass('overlay');
-			}
+		// Initialize tooltips if Bootstrap is available
+		if ($.fn.tooltip) {
+			$('[data-toggle="tooltip"]').tooltip();
+		}
+		
+		// Handle navbar toggle
+		$('.navbar-toggler').on('click', function() {
+			$('.navbar-collapse').toggleClass('show');
 		});
-		$(".main-menu ul li.megamenu").mouseleave(function(){
-			$("#wrapper").removeClass('overlay');
+		
+		// Handle carousel controls if available
+		$('.carousel-control-prev').on('click', function(e) {
+			e.preventDefault();
+			// Custom carousel logic handled by React
+		});
+		
+		$('.carousel-control-next').on('click', function(e) {
+			e.preventDefault();
+			// Custom carousel logic handled by React
+		});
+		
+		// Smooth scrolling for anchor links
+		$('a[href^="#"]').on('click', function(event) {
+			var target = $(this.getAttribute('href'));
+			if( target.length ) {
+				event.preventDefault();
+				$('html, body').stop().animate({
+					scrollTop: target.offset().top
+				}, 1000);
+			}
 		});
 	});
 	
