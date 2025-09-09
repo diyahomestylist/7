@@ -56,20 +56,20 @@ $(function () {
 	//     $('select').niceSelect();
 	// });	
 		
-	/* OwlCarousel - Blog Post slider
+	/* OwlCarousel - Disabled for React compatibility
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	
-	$(document).ready(function() {
-	  var owl = $('.carousel-slider-post');
-	  owl.owlCarousel({
-		items: 1,
-		loop: true,
-		margin: 10,
-		autoplay: true,
-		autoplayTimeout: 3000,
-		autoplayHoverPause: true
-	  });	  
-	});
+	// $(document).ready(function() {
+	//   var owl = $('.carousel-slider-post');
+	//   owl.owlCarousel({
+	//         items: 1,
+	//         loop: true,
+	//         margin: 10,
+	//         autoplay: true,
+	//         autoplayTimeout: 3000,
+	//         autoplayHoverPause: true
+	//   });     
+	// });
 	
 	/* OwlCarousel - Banner Rotator Slider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
